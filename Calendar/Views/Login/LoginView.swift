@@ -10,6 +10,9 @@ import SwiftUI
 struct LoginView: View {
     private struct Constant {
         static let spacing = 20.0
+        static let horizontalPadding = 10.0
+        static let verticaPadding = 10.0
+        static let cornerRadious = 10.0
         
         struct LoginHeader {
             static let paddingTop = 40.0
@@ -24,6 +27,11 @@ struct LoginView: View {
             static let titlePassword = "Password"
             static let iconPassword = "lock.rectangle"
             static let placeholderPassword = "Enter your password"
+            
+            static let subtitleForgotPassword = "Forgot password?"
+            
+            static let titleSignInBtn = "Sign In"
+            static let subtitleConinue = "Or Continue with"
         }
     }
     
@@ -50,9 +58,36 @@ struct LoginView: View {
                           autorizationFieldType: .password,
                           text: $password)
                 
+                HStack(content: {
+                    Spacer()
+                    Button(action: {
+                        
+                    }, label: {
+                        Text(Constant.LoginForm.subtitleForgotPassword)
+                            .font(.caption)
+                    })
+                    .padding(.trailing, Constant.horizontalPadding)
+                })
+                
+                Button(action: {
+                    
+                }, label: {
+                    Text(Constant.LoginForm.titleSignInBtn)
+                        .fontWeight(.bold)
+                        .foregroundStyle(AppColor.Text.black)
+                })
+                .padding(.vertical, Constant.horizontalPadding)
+                .frame(maxWidth: .infinity)
+                .background(AppColor.accent)
+                .clipShape(RoundedRectangle(cornerRadius: Constant.cornerRadious))
+                
+                Text(Constant.LoginForm.subtitleConinue)
+                    .padding(.vertical, Constant.verticaPadding)
+                
                 Spacer()
             }
             .foregroundColor(AppColor.tint)
+            .padding(.horizontal, Constant.horizontalPadding)
         }
     }
 }

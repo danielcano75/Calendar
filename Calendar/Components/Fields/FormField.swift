@@ -15,7 +15,6 @@ enum AutorizationFieldType {
 struct FormField: View {
     private struct Constant {
         struct Field {
-            static let horizontalPadding = 10.0
             static let corner = 15.0
             static let iconSize = 20.0
         }
@@ -30,6 +29,7 @@ struct FormField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
+                .foregroundStyle(.white)
             
             HStack {
                 Image(systemName: icon).frame(width: Constant.Field.iconSize, height: Constant.Field.iconSize)
@@ -48,7 +48,6 @@ struct FormField: View {
             
         }
         .foregroundColor(AppColor.tint)
-        .padding(.horizontal, Constant.Field.horizontalPadding)
     }
 }
 
