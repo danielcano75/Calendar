@@ -15,6 +15,7 @@ struct AppColor {
     }
     struct Text {
         static let black = Color("Background")
+        static let accent = Color("AccentText")
     }
     static let background = Color("Background")
     static let accent = Color("Accent")

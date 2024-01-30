@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
 struct LoginView: View {
     private struct Constant {
@@ -32,8 +33,13 @@ struct LoginView: View {
             
             static let titleSignInBtn = "Sign In"
             static let subtitleConinue = "Or Continue with"
+            
+            static let googleIconName = "Google-Icon"
+            static let googleButtonTitle = "Sign In with Google"
         }
     }
+    
+    @State var viewModel: any LoginViewModelType
     
     @State var email: String = ""
     @State var password: String = ""
@@ -61,7 +67,7 @@ struct LoginView: View {
                 HStack(content: {
                     Spacer()
                     Button(action: {
-                        
+                        viewModel.processForgotPasswordPressed()
                     }, label: {
                         Text(Constant.LoginForm.subtitleForgotPassword)
                             .font(.caption)
@@ -70,19 +76,25 @@ struct LoginView: View {
                 })
                 
                 Button(action: {
-                    
+                    viewModel.processSignInPressed()
                 }, label: {
                     Text(Constant.LoginForm.titleSignInBtn)
                         .fontWeight(.bold)
                         .foregroundStyle(AppColor.Text.black)
                 })
-                .padding(.vertical, Constant.horizontalPadding)
-                .frame(maxWidth: .infinity)
+                .padding(.vertical)
+                .frame(maxWidth: .infinity, maxHeight: DesignSystem.DafaultDimension.Button.height)
                 .background(AppColor.accent)
                 .clipShape(RoundedRectangle(cornerRadius: Constant.cornerRadious))
                 
                 Text(Constant.LoginForm.subtitleConinue)
                     .padding(.vertical, Constant.verticaPadding)
+                
+                SSOButton(iconName: Constant.LoginForm.googleIconName,
+                          title: Constant.LoginForm.googleButtonTitle) {
+                    
+                }
+                .frame(maxHeight: DesignSystem.DafaultDimension.Button.height)
                 
                 Spacer()
             }
@@ -92,22 +104,19 @@ struct LoginView: View {
     }
 }
 
-struct LoginHeader: View {
-    private struct Constant {
-        static let title = "Hello! 👋🏼"
-        static let subtitle = "Enter your detail below"
-    }
-    
-    var body: some View {
-        VStack {
-            Text(Constant.title)
-                .font(.title)
-            Text(Constant.subtitle)
-                .font(.caption)
+#Preview {
+    class PreviewLoginViewModel: LoginViewModelType {
+        var email: String = ""
+        var password: String = ""
+        
+        func processSignInPressed() {
+            print("preview signin")
+        }
+        
+        func processForgotPasswordPressed() {
+            print("preview forgotpasword")
         }
     }
-}
-
-#Preview {
-    LoginView()
+    let viewModel = PreviewLoginViewModel()
+    return LoginView(viewModel: viewModel)
 }
