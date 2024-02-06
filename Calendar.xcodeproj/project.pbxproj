@@ -29,6 +29,8 @@
 		11CA1AC42B686EAD003BF56F /* SSOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1AC32B686EAD003BF56F /* SSOButton.swift */; };
 		11CA1AC82B6873E4003BF56F /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1AC72B6873E4003BF56F /* DesignSystem.swift */; };
 		11CA1ACB2B68740D003BF56F /* DesignSystem+Dimmension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1ACA2B68740D003BF56F /* DesignSystem+Dimmension.swift */; };
+		11DC28E32B71A9E20002E56E /* GoogleCloud-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11DC28E22B71A9E20002E56E /* GoogleCloud-Info.plist */; };
+		11DC28E62B71AE010002E56E /* InfoPlistType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC28E52B71AE010002E56E /* InfoPlistType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,9 @@
 		11CA1AC32B686EAD003BF56F /* SSOButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSOButton.swift; sourceTree = "<group>"; };
 		11CA1AC72B6873E4003BF56F /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		11CA1ACA2B68740D003BF56F /* DesignSystem+Dimmension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Dimmension.swift"; sourceTree = "<group>"; };
+		11DC28E12B71A7C20002E56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		11DC28E22B71A9E20002E56E /* GoogleCloud-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleCloud-Info.plist"; sourceTree = "<group>"; };
+		11DC28E52B71AE010002E56E /* InfoPlistType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlistType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,8 @@
 		110A41F92B3B943A001286A5 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				11DC28E12B71A7C20002E56E /* Info.plist */,
+				11DC28E42B71ADE60002E56E /* Utils */,
 				11CA1AC62B6873AA003BF56F /* DesignSystem */,
 				11CA1AB82B6855A5003BF56F /* Configuration */,
 				1131CF792B4E0DB1009B2F07 /* Components */,
@@ -201,6 +208,7 @@
 		11CA1AB82B6855A5003BF56F /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				11DC28E22B71A9E20002E56E /* GoogleCloud-Info.plist */,
 				11CA1AC02B686BAA003BF56F /* credentials.plist */,
 				11CA1AB92B6855BA003BF56F /* GoogleService-Info.plist */,
 			);
@@ -230,6 +238,14 @@
 				11CA1ACA2B68740D003BF56F /* DesignSystem+Dimmension.swift */,
 			);
 			path = Dimmension;
+			sourceTree = "<group>";
+		};
+		11DC28E42B71ADE60002E56E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				11DC28E52B71AE010002E56E /* InfoPlistType.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DC28E32B71A9E20002E56E /* GoogleCloud-Info.plist in Resources */,
 				110A42022B3B943C001286A5 /* Preview Assets.xcassets in Resources */,
 				11CA1AC12B686BAA003BF56F /* credentials.plist in Resources */,
 				110A41FF2B3B943C001286A5 /* Assets.xcassets in Resources */,
@@ -375,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1131CF7E2B4EDB30009B2F07 /* FormField.swift in Sources */,
+				11DC28E62B71AE010002E56E /* InfoPlistType.swift in Sources */,
 				11CA1AB02B684DAE003BF56F /* LoginFactory.swift in Sources */,
 				110A42252B3B94C4001286A5 /* LoginView.swift in Sources */,
 				11CA1AAD2B684B8D003BF56F /* LoginViewModel.swift in Sources */,
@@ -551,6 +569,7 @@
 				DEVELOPMENT_TEAM = ZTBH29ZRG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -580,6 +599,7 @@
 				DEVELOPMENT_TEAM = ZTBH29ZRG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

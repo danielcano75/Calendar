@@ -36,6 +36,9 @@ struct LoginView: View {
             
             static let googleIconName = "Google-Icon"
             static let googleButtonTitle = "Sign In with Google"
+            
+            static let appleIconName = "Apple-Icon"
+            static let appleButtonTitle = "Sign In with Apple"
         }
     }
     
@@ -92,6 +95,13 @@ struct LoginView: View {
                 
                 SSOButton(iconName: Constant.LoginForm.googleIconName,
                           title: Constant.LoginForm.googleButtonTitle) {
+                    viewModel.processGoogleSignInPressed()
+                }
+                .frame(maxHeight: DesignSystem.DafaultDimension.Button.height)
+                
+                SSOButton(iconName: Constant.LoginForm.appleIconName,
+                          title: Constant.LoginForm.appleButtonTitle,
+                          tintColor: AppColor.Icon.grey) {
                     
                 }
                 .frame(maxHeight: DesignSystem.DafaultDimension.Button.height)
@@ -115,6 +125,10 @@ struct LoginView: View {
         
         func processForgotPasswordPressed() {
             print("preview forgotpasword")
+        }
+        
+        func processGoogleSignInPressed() {
+            print("preview google signin")
         }
     }
     let viewModel = PreviewLoginViewModel()

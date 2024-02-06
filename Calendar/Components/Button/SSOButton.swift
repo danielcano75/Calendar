@@ -11,11 +11,12 @@ struct SSOButton: View {
     struct Constant {
         static let cornerRadious: CGFloat = 10.0
         static let verticalPadding: CGFloat = 10.0
-        static let iconHeight: CGFloat = 30.0
+        static let iconPadding: CGFloat = 5.0
     }
     
     var iconName: String
     var title: String
+    var tintColor: Color? = nil
     var action: () -> ()
     
     var body: some View {
@@ -23,9 +24,20 @@ struct SSOButton: View {
             action()
         } label: {
             HStack {
-                Image(iconName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                ZStack {
+                    if let color = tintColor {
+                        Image(iconName)
+                            .renderingMode(.template)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .tint(color)
+                    } else {
+                        Image(iconName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
+                .padding(Constant.iconPadding)
                 
                 Text(title)
                     .fontWeight(.bold)

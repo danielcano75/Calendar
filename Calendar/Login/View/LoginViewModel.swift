@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseCore
 
 protocol LoginViewModelType: ObservableObject {
     var email: String { set get }
@@ -14,6 +16,7 @@ protocol LoginViewModelType: ObservableObject {
     
     func processSignInPressed()
     func processForgotPasswordPressed()
+    func processGoogleSignInPressed()
 }
 
 class LoginViewModel: LoginViewModelType {
@@ -45,5 +48,16 @@ class LoginViewModel: LoginViewModelType {
     
     func processForgotPasswordPressed() {
         print("Forgot password con correo \(email)")
+    }
+    
+    func processGoogleSignInPressed() {
+        let clientId = InfoPlistType.googleCloud.value(for: "CLIENT_ID")
+        let config = GIDConfiguration(clientID: clientId)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else { return }
+        GIDSignIn.sharedInstance.signIn(withPresenting: presentingViewController) { result, error in
+            print("\(String(describing: result))")
+        }
     }
 }
