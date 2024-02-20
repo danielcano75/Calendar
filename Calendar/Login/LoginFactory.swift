@@ -9,7 +9,8 @@ import SwiftUI
 
 enum LoginFactory {
     static func create() -> some View {
-        let viewModel = LoginViewModel()
+        let useCase = DefaultLoginUseCase()
+        let viewModel = LoginViewModel(loginUseCase: useCase)
         let view = LoginView(viewModel: viewModel)
         return view
     }

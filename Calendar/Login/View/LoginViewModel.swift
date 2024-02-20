@@ -31,18 +31,21 @@ class LoginViewModel: LoginViewModelType {
     
     var email: String = Constant.Email.initialValue
     var password: String = Constant.Password.initialValue
+    private let loginUseCase: LoginUseCase
+    
+    init(loginUseCase: LoginUseCase) {
+        self.loginUseCase = loginUseCase
+    }
     
     func processSignInPressed() {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
-            guard let self else {
-                print("Instance Error!")
-                return
-            }
-            if let error = error {
+        Task {
+            do {
+                let credentias = Credentials(email: email, password: password)
+                let firebaseService: AuthTypeService = .firebase(credentials: credentias)
+                try await loginUseCase.execute(with: firebaseService)
+            } catch {
                 print(error.localizedDescription)
-                return
             }
-            print("Login con crendenciales: \(self.email) y \(self.password)")
         }
     }
     
@@ -51,13 +54,12 @@ class LoginViewModel: LoginViewModelType {
     }
     
     func processGoogleSignInPressed() {
-        let clientId = InfoPlistType.googleCloud.value(for: "CLIENT_ID")
-        let config = GIDConfiguration(clientID: clientId)
-        GIDSignIn.sharedInstance.configuration = config
-        
-        guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else { return }
-        GIDSignIn.sharedInstance.signIn(withPresenting: presentingViewController) { result, error in
-            print("\(String(describing: result))")
+        Task {
+            do {
+                try await loginUseCase.execute(with: .google)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }
