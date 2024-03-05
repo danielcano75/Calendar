@@ -40,9 +40,9 @@ class LoginViewModel: LoginViewModelType {
     func processSignInPressed() {
         Task {
             do {
-                let credentias = Credentials(email: email, password: password)
-                let firebaseService: AuthTypeService = .firebase(credentials: credentias)
-                try await loginUseCase.execute(with: firebaseService)
+                let credentials = Credentials(email: email, password: password)
+                loginUseCase.set(authType: .credentials(credentials: credentials))
+                try await loginUseCase.execute()
             } catch {
                 print(error.localizedDescription)
             }
@@ -56,7 +56,8 @@ class LoginViewModel: LoginViewModelType {
     func processGoogleSignInPressed() {
         Task {
             do {
-                try await loginUseCase.execute(with: .google)
+                loginUseCase.set(authType: .google)
+                try await loginUseCase.execute()
             } catch {
                 print(error.localizedDescription)
             }

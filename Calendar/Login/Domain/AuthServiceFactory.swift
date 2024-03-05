@@ -8,9 +8,9 @@
 import Foundation
 
 enum AuthServiceFactory {
-    static func create(with typeService: AuthTypeService) -> AuthService {
-        switch typeService {
-        case .firebase(let credentials):
+    static func create(with authType: AuthType) -> AuthService {
+        switch authType {
+        case .credentials(let credentials):
             return FirebaseAuthService(credentials: credentials)
         case .google:
             return GoogleSignInService()

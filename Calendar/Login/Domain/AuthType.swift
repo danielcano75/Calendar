@@ -1,5 +1,5 @@
 //
-//  AuthTypeService.swift
+//  AuthType.swift
 //  Calendar
 //
 //  Created by Daniel Cano Arbelaez on 20/02/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AuthTypeService {
-    case firebase(credentials: Credentials)
+enum AuthType {
+    case credentials(credentials: Credentials)
     case google
 }

@@ -49,7 +49,7 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            AppColor.background.ignoresSafeArea(.all)
+            DesignSystem.AppColor.background.ignoresSafeArea(.all)
             VStack(spacing: Constant.spacing) {
                 LoginHeader()
                     .padding(.top, Constant.LoginHeader.paddingTop)
@@ -83,11 +83,11 @@ struct LoginView: View {
                 }, label: {
                     Text(Constant.LoginForm.titleSignInBtn)
                         .fontWeight(.bold)
-                        .foregroundStyle(AppColor.Text.black)
+                        .foregroundStyle(DesignSystem.AppColor.Text.black)
                 })
                 .padding(.vertical)
-                .frame(maxWidth: .infinity, maxHeight: DesignSystem.DafaultDimension.Button.height)
-                .background(AppColor.accent)
+                .frame(maxWidth: .infinity, maxHeight: DesignSystem.DefaultDimension.Button.height)
+                .background(DesignSystem.AppColor.accent)
                 .clipShape(RoundedRectangle(cornerRadius: Constant.cornerRadious))
                 
                 Text(Constant.LoginForm.subtitleConinue)
@@ -97,18 +97,18 @@ struct LoginView: View {
                           title: Constant.LoginForm.googleButtonTitle) {
                     viewModel.processGoogleSignInPressed()
                 }
-                .frame(maxHeight: DesignSystem.DafaultDimension.Button.height)
+                .frame(maxHeight: DesignSystem.DefaultDimension.Button.height)
                 
                 SSOButton(iconName: Constant.LoginForm.appleIconName,
                           title: Constant.LoginForm.appleButtonTitle,
-                          tintColor: AppColor.Icon.grey) {
+                          tintColor: DesignSystem.AppColor.Icon.grey) {
                     
                 }
-                .frame(maxHeight: DesignSystem.DafaultDimension.Button.height)
+                .frame(maxHeight: DesignSystem.DefaultDimension.Button.height)
                 
                 Spacer()
             }
-            .foregroundColor(AppColor.tint)
+            .foregroundColor(DesignSystem.AppColor.tint)
             .padding(.horizontal, Constant.horizontalPadding)
         }
     }

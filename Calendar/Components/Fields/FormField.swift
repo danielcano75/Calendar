@@ -43,11 +43,11 @@ struct FormField: View {
                 }
             }
             .padding()
-            .background(AppColor.fieldBackground)
+            .background(DesignSystem.AppColor.fieldBackground)
             .cornerRadius(Constant.Field.corner)
             
         }
-        .foregroundColor(AppColor.tint)
+        .foregroundColor(DesignSystem.AppColor.tint)
     }
 }
 

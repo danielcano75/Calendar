@@ -14,7 +14,6 @@
 		110A42162B3B943D001286A5 /* CalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A42152B3B943D001286A5 /* CalendarUITests.swift */; };
 		110A42182B3B943D001286A5 /* CalendarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A42172B3B943D001286A5 /* CalendarUITestsLaunchTests.swift */; };
 		110A42252B3B94C4001286A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A42242B3B94C4001286A5 /* LoginView.swift */; };
-		110A422B2B3B9825001286A5 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110A422A2B3B9825001286A5 /* AppColor.swift */; };
 		1112D4112B7AE2E000183E4C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4102B7AE2E000183E4C /* AuthService.swift */; };
 		1112D4132B7AE2FB00183E4C /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4122B7AE2FB00183E4C /* FirebaseAuthService.swift */; };
 		1112D4162B7BC83200183E4C /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4152B7BC83200183E4C /* LoginUseCase.swift */; };
@@ -22,8 +21,11 @@
 		1112D41D2B7BFD3400183E4C /* Application+Windows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D41C2B7BFD3400183E4C /* Application+Windows.swift */; };
 		1131CF7C2B4E0DE8009B2F07 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1131CF7B2B4E0DE8009B2F07 /* PasswordField.swift */; };
 		1131CF7E2B4EDB30009B2F07 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1131CF7D2B4EDB30009B2F07 /* FormField.swift */; };
+		114A13372B968D2500D321D2 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A13362B968D2500D321D2 /* HomeFactory.swift */; };
+		114A133A2B968D7D00D321D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A13392B968D7D00D321D2 /* HomeView.swift */; };
+		117149E62B8D579B006DC8B7 /* DefaultLoginUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117149E52B8D579B006DC8B7 /* DefaultLoginUseCaseTests.swift */; };
 		11BFDA4E2B84EFFD0027C08E /* GoogleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BFDA4D2B84EFFD0027C08E /* GoogleSignInService.swift */; };
-		11BFDA502B84F34C0027C08E /* AuthTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BFDA4F2B84F34C0027C08E /* AuthTypeService.swift */; };
+		11BFDA502B84F34C0027C08E /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BFDA4F2B84F34C0027C08E /* AuthType.swift */; };
 		11BFDA522B84F44D0027C08E /* AuthServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BFDA512B84F44D0027C08E /* AuthServiceFactory.swift */; };
 		11CA1AAD2B684B8D003BF56F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1AAC2B684B8D003BF56F /* LoginViewModel.swift */; };
 		11CA1AB02B684DAE003BF56F /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1AAF2B684DAE003BF56F /* LoginFactory.swift */; };
@@ -37,6 +39,7 @@
 		11CA1AC42B686EAD003BF56F /* SSOButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1AC32B686EAD003BF56F /* SSOButton.swift */; };
 		11CA1AC82B6873E4003BF56F /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1AC72B6873E4003BF56F /* DesignSystem.swift */; };
 		11CA1ACB2B68740D003BF56F /* DesignSystem+Dimmension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA1ACA2B68740D003BF56F /* DesignSystem+Dimmension.swift */; };
+		11F3F16A2B976C72009746AE /* DesignSystem+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F3F1692B976C72009746AE /* DesignSystem+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +70,6 @@
 		110A42152B3B943D001286A5 /* CalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITests.swift; sourceTree = "<group>"; };
 		110A42172B3B943D001286A5 /* CalendarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		110A42242B3B94C4001286A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		110A422A2B3B9825001286A5 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		1112D4102B7AE2E000183E4C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1112D4122B7AE2FB00183E4C /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		1112D4152B7BC83200183E4C /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -75,8 +77,11 @@
 		1112D41C2B7BFD3400183E4C /* Application+Windows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Windows.swift"; sourceTree = "<group>"; };
 		1131CF7B2B4E0DE8009B2F07 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		1131CF7D2B4EDB30009B2F07 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		114A13362B968D2500D321D2 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		114A13392B968D7D00D321D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		117149E52B8D579B006DC8B7 /* DefaultLoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginUseCaseTests.swift; sourceTree = "<group>"; };
 		11BFDA4D2B84EFFD0027C08E /* GoogleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInService.swift; sourceTree = "<group>"; };
-		11BFDA4F2B84F34C0027C08E /* AuthTypeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTypeService.swift; sourceTree = "<group>"; };
+		11BFDA4F2B84F34C0027C08E /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
 		11BFDA512B84F44D0027C08E /* AuthServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceFactory.swift; sourceTree = "<group>"; };
 		11CA1AAC2B684B8D003BF56F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		11CA1AAF2B684DAE003BF56F /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 		11CA1AC72B6873E4003BF56F /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		11CA1ACA2B68740D003BF56F /* DesignSystem+Dimmension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Dimmension.swift"; sourceTree = "<group>"; };
 		11DC28E12B71A7C20002E56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		11F3F1692B976C72009746AE /* DesignSystem+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +153,9 @@
 				11CA1AC62B6873AA003BF56F /* DesignSystem */,
 				11CA1AB82B6855A5003BF56F /* Configuration */,
 				1131CF792B4E0DB1009B2F07 /* Components */,
+				114A13352B968D0A00D321D2 /* Home */,
 				110A42272B3B94D0001286A5 /* Login */,
 				110A41FA2B3B943A001286A5 /* CalendarApp.swift */,
-				110A422A2B3B9825001286A5 /* AppColor.swift */,
 				110A41FE2B3B943C001286A5 /* Assets.xcassets */,
 				110A42002B3B943C001286A5 /* Preview Content */,
 			);
@@ -167,6 +173,7 @@
 		110A420A2B3B943D001286A5 /* CalendarTests */ = {
 			isa = PBXGroup;
 			children = (
+				117149E22B8D5764006DC8B7 /* Login */,
 				110A420B2B3B943D001286A5 /* CalendarTests.swift */,
 			);
 			path = CalendarTests;
@@ -207,7 +214,7 @@
 			children = (
 				1112D4142B7BC82700183E4C /* UseCases */,
 				1112D4102B7AE2E000183E4C /* AuthService.swift */,
-				11BFDA4F2B84F34C0027C08E /* AuthTypeService.swift */,
+				11BFDA4F2B84F34C0027C08E /* AuthType.swift */,
 				11BFDA512B84F44D0027C08E /* AuthServiceFactory.swift */,
 			);
 			path = Domain;
@@ -272,6 +279,47 @@
 			path = Fields;
 			sourceTree = "<group>";
 		};
+		114A13352B968D0A00D321D2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				114A13382B968D6000D321D2 /* View */,
+				114A13362B968D2500D321D2 /* HomeFactory.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		114A13382B968D6000D321D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				114A13392B968D7D00D321D2 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		117149E22B8D5764006DC8B7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				117149E32B8D5775006DC8B7 /* Domain */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		117149E32B8D5775006DC8B7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				117149E42B8D5781006DC8B7 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		117149E42B8D5781006DC8B7 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				117149E52B8D579B006DC8B7 /* DefaultLoginUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		11CA1AB82B6855A5003BF56F /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +340,7 @@
 		11CA1AC62B6873AA003BF56F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				11F3F1682B976C4F009746AE /* Color */,
 				11CA1AC92B6873FB003BF56F /* Dimmension */,
 				11CA1AC72B6873E4003BF56F /* DesignSystem.swift */,
 			);
@@ -304,6 +353,14 @@
 				11CA1ACA2B68740D003BF56F /* DesignSystem+Dimmension.swift */,
 			);
 			path = Dimmension;
+			sourceTree = "<group>";
+		};
+		11F3F1682B976C4F009746AE /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				11F3F1692B976C72009746AE /* DesignSystem+Color.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,24 +506,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				1131CF7E2B4EDB30009B2F07 /* FormField.swift in Sources */,
+				114A13372B968D2500D321D2 /* HomeFactory.swift in Sources */,
 				11BFDA4E2B84EFFD0027C08E /* GoogleSignInService.swift in Sources */,
 				11CA1AB02B684DAE003BF56F /* LoginFactory.swift in Sources */,
 				110A42252B3B94C4001286A5 /* LoginView.swift in Sources */,
 				1112D4112B7AE2E000183E4C /* AuthService.swift in Sources */,
 				11CA1AAD2B684B8D003BF56F /* LoginViewModel.swift in Sources */,
 				1131CF7C2B4E0DE8009B2F07 /* PasswordField.swift in Sources */,
-				11BFDA502B84F34C0027C08E /* AuthTypeService.swift in Sources */,
+				11BFDA502B84F34C0027C08E /* AuthType.swift in Sources */,
 				1112D4132B7AE2FB00183E4C /* FirebaseAuthService.swift in Sources */,
 				110A41FB2B3B943A001286A5 /* CalendarApp.swift in Sources */,
 				11CA1AC82B6873E4003BF56F /* DesignSystem.swift in Sources */,
 				11CA1ACB2B68740D003BF56F /* DesignSystem+Dimmension.swift in Sources */,
 				11CA1AB22B684F0B003BF56F /* LoginHeader.swift in Sources */,
 				11BFDA522B84F44D0027C08E /* AuthServiceFactory.swift in Sources */,
+				114A133A2B968D7D00D321D2 /* HomeView.swift in Sources */,
+				11F3F16A2B976C72009746AE /* DesignSystem+Color.swift in Sources */,
 				1112D4192B7BC87000183E4C /* RootViewControllerRetriever.swift in Sources */,
 				1112D4162B7BC83200183E4C /* LoginUseCase.swift in Sources */,
 				11CA1AC42B686EAD003BF56F /* SSOButton.swift in Sources */,
 				1112D41D2B7BFD3400183E4C /* Application+Windows.swift in Sources */,
-				110A422B2B3B9825001286A5 /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				110A420C2B3B943D001286A5 /* CalendarTests.swift in Sources */,
+				117149E62B8D579B006DC8B7 /* DefaultLoginUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

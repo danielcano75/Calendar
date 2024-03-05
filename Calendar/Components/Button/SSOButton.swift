@@ -44,8 +44,8 @@ struct SSOButton: View {
             }
             .padding(.vertical, Constant.verticalPadding)
             .frame(maxWidth: .infinity)
-            .background(AppColor.fieldBackground)
-            .foregroundColor(AppColor.Text.accent)
+            .background(DesignSystem.AppColor.fieldBackground)
+            .foregroundColor(DesignSystem.AppColor.Text.accent)
             .clipShape(RoundedRectangle(cornerRadius: Constant.cornerRadious))
         }
 
