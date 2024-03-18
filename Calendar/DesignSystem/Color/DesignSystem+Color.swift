@@ -27,5 +27,6 @@ extension DesignSystem {
         static let accent = Color("Accent")
         static let tint = Color("Ash")
         static let fieldBackground = Color("FieldBackground")
+        static let sleekCyan = Color("SleekCyan")
     }
 }
