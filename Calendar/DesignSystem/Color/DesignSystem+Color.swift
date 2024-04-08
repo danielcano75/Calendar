@@ -11,8 +11,8 @@ extension DesignSystem {
     enum AppColor {
         enum State {
             static let cancelled = Color("AmpleOrange")
-            static let outgoing = Color("GreatMagenda")
-            static let pending = accent
+            static let outgoing = Color("SleekCyan")
+            static let pending = Color("GreatMagenda")
         }
         enum Text {
             static let black = Color("Background")

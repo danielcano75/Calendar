@@ -56,9 +56,14 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity)
                 .background {
                     RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                        .fill(DesignSystem.AppColor.sleekCyan)
+                        .fill(DesignSystem.AppColor.State.outgoing)
                 }
-                .padding(.horizontal)
+                .padding([.horizontal, .bottom])
+                
+                CardStateView(state: "Pending", 
+                              tasks: "## Tasks",
+                              iconName: "ellipsis.circle",
+                              colorState: DesignSystem.AppColor.State.pending)
                 
                 Spacer()
             }
@@ -97,5 +102,46 @@ struct ButtonItem: View {
     @State var navigationPath = NavigationPath()
     return NavigationStack(path: $navigationPath) {
         HomeView()
+    }
+}
+
+struct CardStateView: View {
+    private struct Constants {
+        static let iconSize: CGFloat = 30
+        static let circleSize: CGFloat = 40
+        static let cornerRadius: CGFloat = 25.0
+    }
+    
+    var state: String
+    var tasks: String
+    var iconName: String
+    var colorState: Color
+    
+    var body: some View {
+        Button(action: {
+            
+        }, label: {
+            HStack {
+                VStack {
+                    Text(state)
+                        .fontWeight(.bold)
+                    Text(tasks)
+                }
+                Circle()
+                    .fill(DesignSystem.AppColor.Text.accent)
+                    .overlay {
+                        Image(systemName: iconName)
+                            .font(.system(size: Constants.iconSize))
+                    }
+                    .frame(width: Constants.circleSize,
+                           height: Constants.circleSize)
+            }
+            .tint(DesignSystem.AppColor.Text.black)
+        })
+        .background {
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                .fill(colorState)
+        }
+        .padding([.horizontal, .bottom])
     }
 }
