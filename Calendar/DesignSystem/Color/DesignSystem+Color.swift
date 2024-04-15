@@ -13,6 +13,7 @@ extension DesignSystem {
             static let cancelled = Color("AmpleOrange")
             static let outgoing = Color("SleekCyan")
             static let pending = Color("GreatMagenda")
+            static let completed = accent
         }
         enum Text {
             static let black = Color("Background")

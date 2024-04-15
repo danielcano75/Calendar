@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    private struct Constants {
-        static let iconSize: CGFloat = 30
-        static let circleSize: CGFloat = 40
-        static let cornerRadius: CGFloat = 25.0
-        static let outgoingArrowSize: CGFloat = 25
-    }
-    
+
     var body: some View {
         ZStack {
             DesignSystem.AppColor.background.ignoresSafeArea(.all)
@@ -27,43 +21,7 @@ struct HomeView: View {
                 }
                 .padding(.horizontal)
                 
-                Button {
-                    
-                } label: {
-                    VStack(alignment: .leading, spacing: .zero) {
-                        Circle()
-                            .fill(DesignSystem.AppColor.Text.accent)
-                            .overlay {
-                                Image(systemName: "arrow.clockwise")
-                                    .font(.system(size: Constants.iconSize))
-                            }
-                            .frame(width: Constants.circleSize,
-                                   height: Constants.circleSize)
-                            .padding([.horizontal, .top])
-                        Text("Ongoing")
-                            .fontWeight(.bold)
-                            .padding([.horizontal, .top])
-                        HStack {
-                            Text("## Tasks")
-                            Spacer()
-                            Image(systemName: "arrow.up.right.circle")
-                                .font(.system(size: Constants.outgoingArrowSize))
-                        }
-                        .padding([.horizontal, .vertical])
-                    }
-                    .tint(DesignSystem.AppColor.Text.black)
-                }
-                .frame(maxWidth: .infinity)
-                .background {
-                    RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                        .fill(DesignSystem.AppColor.State.outgoing)
-                }
-                .padding([.horizontal, .bottom])
-                
-                CardStateView(state: "Pending", 
-                              tasks: "## Tasks",
-                              iconName: "ellipsis.circle",
-                              colorState: DesignSystem.AppColor.State.pending)
+                TaskSummaryView()
                 
                 Spacer()
             }
@@ -122,26 +80,118 @@ struct CardStateView: View {
             
         }, label: {
             HStack {
-                VStack {
+                VStack(alignment: .leading) {
                     Text(state)
                         .fontWeight(.bold)
                     Text(tasks)
                 }
+                Spacer()
                 Circle()
                     .fill(DesignSystem.AppColor.Text.accent)
                     .overlay {
                         Image(systemName: iconName)
                             .font(.system(size: Constants.iconSize))
                     }
-                    .frame(width: Constants.circleSize,
-                           height: Constants.circleSize)
+                    .frame(width: Constants.circleSize)
             }
             .tint(DesignSystem.AppColor.Text.black)
         })
+        .padding()
+        .frame(maxWidth: .infinity)
         .background {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .fill(colorState)
         }
-        .padding([.horizontal, .bottom])
+        .padding([.horizontal])
+    }
+}
+
+struct TaskSummaryView: View {
+    private struct Constants {
+        static let iconSize: CGFloat = 30
+        static let circleSize: CGFloat = 40
+        static let cornerRadius: CGFloat = 25.0
+        static let outgoingArrowSize: CGFloat = 25
+        static let statetsHeight: CGFloat = 170
+    }
+    
+    var body: some View {
+        VStack {
+            Button {
+                
+            } label: {
+                VStack(alignment: .leading, spacing: .zero) {
+                    Circle()
+                        .fill(DesignSystem.AppColor.Text.accent)
+                        .overlay {
+                            Image(systemName: "arrow.clockwise")
+                                .font(.system(size: Constants.iconSize))
+                        }
+                        .frame(width: Constants.circleSize,
+                               height: Constants.circleSize)
+                        .padding([.horizontal, .top])
+                    Text("Ongoing")
+                        .fontWeight(.bold)
+                        .padding([.horizontal, .top])
+                    HStack {
+                        Text("## Tasks")
+                        Spacer()
+                        Image(systemName: "arrow.up.right.circle")
+                            .font(.system(size: Constants.outgoingArrowSize))
+                    }
+                    .padding([.horizontal, .vertical])
+                }
+                .tint(DesignSystem.AppColor.Text.black)
+            }
+            .frame(maxWidth: .infinity)
+            .background {
+                RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                    .fill(DesignSystem.AppColor.State.outgoing)
+            }
+            .padding([.horizontal, .bottom])
+            
+            HStack(spacing: .zero) {
+                VStack(spacing: .zero) {
+                    CardStateView(state: "Pending",
+                                  tasks: "## Tasks",
+                                  iconName: "ellipsis.circle",
+                                  colorState: DesignSystem.AppColor.State.pending)
+                    
+                    Spacer()
+                    
+                    CardStateView(state: "Completed",
+                                  tasks: "## Tasks",
+                                  iconName: "checkmark.circle",
+                                  colorState: DesignSystem.AppColor.State.completed)
+                }
+                
+                Button {
+                    
+                } label: {
+                    VStack(alignment: .leading) {
+                        Circle()
+                            .fill(DesignSystem.AppColor.Text.accent)
+                            .overlay {
+                                Image(systemName: "xmark.circle")
+                                    .font(.system(size: Constants.iconSize))
+                            }
+                            .frame(width: Constants.circleSize)
+                        Spacer()
+                        Text("Cancel")
+                            .fontWeight(.bold)
+                        Text("## Tasks")
+                    }
+                    .foregroundStyle(DesignSystem.AppColor.Text.black)
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                            .fill(DesignSystem.AppColor.State.cancelled)
+                    }
+                    .padding(.trailing)
+                }
+
+            }
+            .frame(height: Constants.statetsHeight)
+        }
     }
 }
